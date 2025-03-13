@@ -1,0 +1,197 @@
+{
+  "name": "jason-test",
+  "displayName": "jason-test",
+  "description": "first one",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jason-test.enterInsertMode",
+        "title": "Enter Insert Mode"
+      },
+      {
+        "command": "jason-test.enterNormalMode",
+        "title": "Enter Normal Mode"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "j",
+        "command": "cursorLeft",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "l",
+        "command": "cursorRight",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "k",
+        "command": "cursorDown",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "i",
+        "command": "cursorUp",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "a",
+        "command": "jason-test.enterInsertMode",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "escape",
+        "command": "jason-test.enterNormalMode",
+        "when": "editorTextFocus && !vimMode"
+      },
+      {
+        "key": "Shift+J",
+        "command": "cursorLeftSelect",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "Shift+K",
+        "command": "cursorDownSelect",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "Shift+L",
+        "command": "cursorRightSelect",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "Shift+I",
+        "command": "cursorUpSelect",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "x",
+        "command": "editor.action.clipboardCutAction",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "q",
+        "command": "deleteLeft",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "d",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "w",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "r",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "f",
+        "command": "editor.fold",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "g",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "n",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "Shift+n",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "p",
+        "command": "workbench.action.splitEditorRight",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": ",",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "u",
+        "command": "workbench.action.decreaseViewSize",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "o",
+        "command": "workbench.action.increaseViewSize",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": ";",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "'",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "s",
+        "command": "workbench.action.files.save",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "z",
+        "command": "undo",
+        "when": "editorTextFocus && vimMode"
+      },
+      {
+        "key": "Shift+Z",
+        "command": "redo",
+        "when": "editorTextFocus && vimMode"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
